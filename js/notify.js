@@ -46,7 +46,7 @@ function _testSound() {
 	
 	window.testSound = true;
 	document.getElementById('click-sound').play()
-	.catch( (a,b,c) => {
+	.catch( () => {
 		window.alert('This webpage would like to play sounds.\nBrowser needs user interactions on this page to autoplay a sound.\nTo avoid/bypass this restriction in the future, please set this Site Settings > Sounds to "Allow".')
 	});
 }
