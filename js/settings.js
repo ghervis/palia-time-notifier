@@ -90,6 +90,10 @@ export function onVoiceDropdownChange() {
 	Say.doSpeak(`It is now ${ingameTimeDisplay} in Palia.`);
 }
 
+export function toggleSettings() {
+	document.getElementById('settings-dialog').showModal();
+}
+
 const _pickInitialSelectedVoice = () => {
 	const voices = speechSynthesis.getVoices();
 

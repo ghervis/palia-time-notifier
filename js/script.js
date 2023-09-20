@@ -19,6 +19,8 @@ import * as Say from './say.js';
 
 	window.toggleEnableNotifications = NotificationManager.toggleEnableNotifications;
 
+	window.toggleSettings = Settings.toggleSettings;
+
 	TabManager.registerVisibilityChangeEvent();
 
 	document.addEventListener("voices-loaded", async () => {

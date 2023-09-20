@@ -27,7 +27,7 @@
 			</div>
 			<div class="header-status">
 				<div>
-						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span>
+						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span><span id="settings-button" onclick="toggleSettings()">&#128736;</span>
 				</div>
 				<div>
 					<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/>&nbsp;Show All Options</label>
@@ -43,6 +43,10 @@
 		</div>
 	</div>
 	
+	<dialog id="settings-dialog">
+	</dialog>
+
+	<audio id="click-sound" src="./mp3/click-sound.mp3" muted="muted"></audio>
 	<link href='./css/common.css?v=6901' rel='stylesheet' type='text/css'>
 	<link href='./css/index.css?v=6903' rel='stylesheet' type='text/css'>
 	<script src="./js/script.js?v=6903" type="module"></script>
