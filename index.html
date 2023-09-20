@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' name='viewport' />
+	<meta name="viewport" content="width=device-width" />
+	<link data-n-head="ssr" rel="preconnect" href="https://fonts.googleapis.com">
+	<link data-n-head="ssr" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
+	<link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&amp;family=Quicksand:wght@600;700&amp;display=swap">
+	<link rel="icon" href="./favicon.ico?v=69" type="image/x-icon" />
+
+	<meta property="og:image" content="https://raw.githubusercontent.com/revulvgina/palia-time-notifier/main/Exquisite_Hoe.png">
+	<meta property="og:title" content="Palia Time Notifier" />
+	<meta property="og:description" content="Get Palia time notifications." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://revulvgina.github.io/palia-time-notifier/" />
+	<meta name="description" content="Get Palia time notifications.">
+	<meta name="theme-color" content="#83d5f6">
+</head>
+
+<body>
+	<div class="main">
+		<div class="header">
+			<div>
+				<h1>Palia Time Notifier</h1>
+			</div>
+			<div class="header-status">
+				<div>
+						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span>
+				</div>
+				<div>
+					<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/>&nbsp;Show All Options</label>
+				</div>
+				<div>
+					<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" />&nbsp;App Notifications</label>
+				</div>
+			</div>
+			
+		</div>
+		<div id="voices-container"></div>
+		<div id="palia-times-container" data-show-all="false">
+		</div>
+	</div>
+	
+	<link href='./css/common.css?v=6901' rel='stylesheet' type='text/css'>
+	<link href='./css/index.css?v=6903' rel='stylesheet' type='text/css'>
+	<script src="./js/script.js?v=6903" type="module"></script>
+</body>
+
+</html>

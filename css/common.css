@@ -1,0 +1,135 @@
+:root {
+	--vs-disabled-bg: var(--vs-state-disabled-bg);
+	--vs-disabled-color: var(--vs-state-disabled-color);
+	--vs-disabled-cursor: var(--vs-state-disabled-cursor);
+	--vs-transition-timing-function: cubic-bezier(1,0.5,0.8,1);
+	--vs-transition-duration: 0.15s;
+	--vs-colors--lightest: rgba(60,60,60,.26);
+	--vs-colors--light: rgba(60,60,60,.5);
+	--vs-colors--dark: #333;
+	--vs-colors--darkest: rgba(0,0,0,.15);
+	--vs-search-input-color: inherit;
+	--vs-search-input-bg: #fff;
+	--vs-search-input-placeholder-color: inherit;
+	--vs-font-size: 1rem;
+	--vs-line-height: 1.4;
+	--vs-state-disabled-bg: #f8f8f8;
+	--vs-state-disabled-color: var(--vs-colors--light);
+	--vs-state-disabled-controls-color: var(--vs-colors--light);
+	--vs-state-disabled-cursor: not-allowed;
+	--vs-border-color: var(--vs-colors--lightest);
+	--vs-border-width: 1px;
+	--vs-border-style: solid;
+	--vs-border-radius: 4px;
+	--vs-actions-padding: 4px 6px 0 3px;
+	--vs-controls-color: var(--vs-colors--light);
+	--vs-controls-size: 1;
+	--vs-controls--deselect-text-shadow: 0 1px 0 #fff;
+	--vs-selected-bg: #f0f0f0;
+	--vs-selected-color: var(--vs-colors--dark);
+	--vs-selected-border-color: var(--vs-border-color);
+	--vs-selected-border-style: var(--vs-border-style);
+	--vs-selected-border-width: var(--vs-border-width);
+	--vs-dropdown-bg: #fff;
+	--vs-dropdown-color: inherit;
+	--vs-dropdown-z-index: 1000;
+	--vs-dropdown-min-width: 160px;
+	--vs-dropdown-max-height: 350px;
+	--vs-dropdown-box-shadow: 0px 3px 6px 0px var(--vs-colors--darkest);
+	--vs-dropdown-option-bg: #000;
+	--vs-dropdown-option-color: var(--vs-dropdown-color);
+	--vs-dropdown-option-padding: 3px 20px;
+	--vs-dropdown-option--active-bg: #5897fb;
+	--vs-dropdown-option--active-color: #fff;
+	--vs-dropdown-option--deselect-bg: #fb5858;
+	--vs-dropdown-option--deselect-color: #fff;
+	--vs-transition-timing-function: cubic-bezier(1,-0.115,0.975,0.855);
+	--vs-transition-duration: 150ms;
+	--swiper-theme-color: #007aff;
+	--black: #000;
+	--white: #fff;
+	--off-white: #fffcf7;
+	--earthy-500: #594f42;
+	--earthy-400: #877d71;
+	--earthy-300: #988d7f;
+	--earthy-200: #ede4d8;
+	--earthy-100: #f5ecdf;
+	--sun-kissed-paper: #fef4e6;
+	--sky-blue: #1e9de8;
+	--dark-blue: #005b98;
+	--nautical-blue: #395684;
+	--light-blue: #10698c;
+	--easeInOutQuint: cubic-bezier(0.86,0,0.07,1);
+	--easeOutCirc: cubic-bezier(0.075,0.82,0.165,1);
+	--html-background: var(--sun-kissed-paper);
+	--html-min-width: 320px;
+	--base-font-family: "Quicksand",Arial,serif;
+	--base-font-size: 16px;
+	--base-line-height: math.div(24px,16px);
+	--heading-font-family: "Merriweather",serif;
+	--transition-speed-normal: 0.4s;
+	--transition-speed-fast: 0.2s;
+	--modal-z-index: 1000;
+	--nav-z-index: 999;
+	--swiper-overflow: visible;
+	--site-max-width: 100%;
+	--border-radius: 7px;
+	--border-thickness: 3px;
+	--background-gradient: linear-gradient(180deg,#42cdfb,#4983e9);
+	--background-gradient-hover: linear-gradient(180deg,#26e1ff,#495cf9);
+	--primary-btn: linear-gradient(180deg,#ffc00d,#ffd459);
+	--primary-btn-border: #fed14f;
+	--primary-btn-hover: #ffeaad;
+	--secondary-btn: linear-gradient(180deg,#1e9de8,#4886ea);
+	--secondary-btn-border: #428aea;
+	--secondary-btn-hover: #005b98;
+	--common-background: 254, 244, 230;
+
+	font-size: 15px;
+	font-family: 'Merriweather', serif;
+	color: rgb(var(--color-3a3a3a));
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+.no-highlight {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.arrow-back {
+	filter: invert(100%) sepia(100%) saturate(1%) hue-rotate(159deg) brightness(104%) contrast(101%) drop-shadow(0px -1px 0px #00000044) drop-shadow(1px 0px 0px #00000044) drop-shadow(1px 1px 0px #00000044) drop-shadow(-1px 1px 0px #00000044);
+	width: 40px;
+	cursor: pointer;
+}
+
+.vertical-align {
+	vertical-align: middle;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.opacity-zero {
+	opacity: 0;
+}
+
+.display-none {
+	display: none;
+}
