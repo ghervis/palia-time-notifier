@@ -21,6 +21,8 @@ import * as Say from './say.js';
 
 	window.toggleSettings = Settings.toggleSettings;
 
+	window.closeSettingsDialog = Settings.closeSettingsDialog;
+
 	TabManager.registerVisibilityChangeEvent();
 
 	document.addEventListener("voices-loaded", async () => {

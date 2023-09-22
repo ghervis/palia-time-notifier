@@ -94,6 +94,10 @@ export function toggleSettings() {
 	document.getElementById('settings-dialog').showModal();
 }
 
+export function closeSettingsDialog() {
+	document.getElementById('settings-dialog').close();
+}
+
 const _pickInitialSelectedVoice = () => {
 	const voices = speechSynthesis.getVoices();
 

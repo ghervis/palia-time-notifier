@@ -23,27 +23,40 @@
 	<div class="main">
 		<div class="header">
 			<div>
-				<h1>Palia Time Notifier</h1>
+				<h1 class="no-highlight">Palia Time Notifier</h1>
 			</div>
 			<div class="header-status">
 				<div>
-						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span><span id="settings-button" onclick="toggleSettings()">&#128736;</span>
+						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span>
 				</div>
 				<div>
-					<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/>&nbsp;Show All Options</label>
-				</div>
-				<div>
-					<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" />&nbsp;App Notifications</label>
+					<span class="no-highlight" id="settings-button" onclick="toggleSettings()">Settings&nbsp;&#128736;</span>
 				</div>
 			</div>
 			
 		</div>
-		<div id="voices-container"></div>
 		<div id="palia-times-container" data-show-all="false">
 		</div>
 	</div>
 	
 	<dialog id="settings-dialog">
+		<div class="settings-header">
+			<span>Settings&nbsp;&#128736;</span>
+			<div class="header-close-button cursor-pointer no-highlight"
+				onclick="closeSettingsDialog()">X</div>
+		</div>
+		<div class="settings-item">
+			<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/><span>Show All Options</span></label>
+		</div>
+		<div class="settings-item">
+			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>
+		</div>
+		<div class="settings-item" id="voices-container">
+			<div><span>Voice to use</span></div>
+		</div>
+		<div class="settings-item">
+			<a href='https://ko-fi.com/V7V6FNLGC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+		</div>
 	</dialog>
 
 	<audio id="click-sound" src="./mp3/click-sound.mp3" muted="muted"></audio>

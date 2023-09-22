@@ -87,7 +87,7 @@
 
 	font-size: 15px;
 	font-family: 'Merriweather', serif;
-	color: rgb(var(--color-3a3a3a));
+	color: var(--earthy-500);
 }
 
 * {
