@@ -52,7 +52,7 @@ body {
 	border: 2px solid var(--vs-colors--lightest);
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-color: rgba(var(--common-background), 0.8);
+	background-image: linear-gradient(to bottom, rgba(var(--common-background), 1) 40%, rgba(var(--common-background), 0.5));
 }
 
 #palia-times-container[data-show-all="false"]>div[data-is-checked="false"] {
@@ -143,7 +143,7 @@ input[type="text"][id^="text"] {
 }
 
 .settings-item {
-	margin-top: 10px;
+	margin-top: 15px;
 }
 
 .settings-item label > span {

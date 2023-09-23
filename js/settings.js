@@ -98,6 +98,17 @@ export function closeSettingsDialog() {
 	document.getElementById('settings-dialog').close();
 }
 
+export function initializeVoiceVolume() {
+	const voiceVolumeStringValue = window.localStorage.getItem('voice-volume');
+	const voiceVolumeNumberValue = 'string' !== typeof voiceVolumeStringValue || !/^[0-9]+$/.test(voiceVolumeStringValue) ? 90 : Number.parseInt(voiceVolumeStringValue, 10);
+	window.localStorage.setItem('voice-volume', voiceVolumeNumberValue);
+	document.getElementById("voice-volume").value = voiceVolumeNumberValue
+}
+
+export function onVoiceVolumeChange() {
+	window.localStorage.setItem('voice-volume', document.getElementById('voice-volume').value);
+}
+
 const _pickInitialSelectedVoice = () => {
 	const voices = speechSynthesis.getVoices();
 

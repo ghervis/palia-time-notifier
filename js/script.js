@@ -10,6 +10,7 @@ import * as Say from './say.js';
 	
 	Settings.initializeShowAll();
 	Settings.initializeNotifications();
+	Settings.initializeVoiceVolume();
 
 	window.onTimeChecked = Settings.onTimeChecked;
 	
@@ -22,6 +23,8 @@ import * as Say from './say.js';
 	window.toggleSettings = Settings.toggleSettings;
 
 	window.closeSettingsDialog = Settings.closeSettingsDialog;
+
+	window.onVoiceVolumeChange = Settings.onVoiceVolumeChange;
 
 	TabManager.registerVisibilityChangeEvent();
 

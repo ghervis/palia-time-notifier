@@ -42,5 +42,7 @@ export function doSpeak(theText) {
 	
 	speech.voice = voice;
 	
+	speech.volume = Number.parseInt(window.localStorage.getItem('voice-volume'), 10)/100;
+	
   speechSynthesis.speak(speech);
 }
