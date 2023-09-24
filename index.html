@@ -42,8 +42,11 @@
 	<dialog id="settings-dialog">
 		<div class="settings-header">
 			<span>Settings&nbsp;&#128736;</span>
-			<div class="header-close-button cursor-pointer no-highlight"
-				onclick="closeSettingsDialog()">X</div>
+			<div class="settings-hits">
+				<img src="https://hits.sh/ghervis.github.io/palia-time-notifier.svg" />
+			</div>
+			<div class="settings-close-button cursor-pointer no-highlight"
+				onclick="closeSettingsDialog()">&#10006;</div>
 		</div>
 		<div class="settings-item">
 			<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/><span>Show All Options</span></label>
@@ -55,12 +58,14 @@
 			<div><span>Voice to use</span></div>
 		</div>
 		<div class="settings-item">
-			
 			<div class="volume-label">
 				<span>Voice Volume&nbsp;</span><span id="voice-volume-intensity">🔊</span>
 			</div>
 			<input type="range" id="voice-volume" name="voice-volume" min="0" max="100" step="10"
 			onchange="onVoiceVolumeChange()" />
+		</div>
+		<div class="settings-item">
+			<label title="Toggle dark mode."><input type="checkbox" id="dark-mode" onchange="toggleDarkMode()" /><span>Dark Mode</span></label>
 		</div>
 		<div class="settings-item">
 			<a href='https://ko-fi.com/V7V6FNLGC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
@@ -70,6 +75,7 @@
 	<audio id="click-sound" src="./mp3/click-sound.mp3" muted="muted"></audio>
 	<link href='./css/common.css?v=6901' rel='stylesheet' type='text/css'>
 	<link href='./css/index.css?v=6903' rel='stylesheet' type='text/css'>
+	<link href='./css/index-dark-mode.css?v=6903' rel='stylesheet' type='text/css'>
 	<script src="./js/script.js?v=6903" type="module"></script>
 </body>
 

@@ -3,7 +3,7 @@
 }
 
 body {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(https://images.ctfassets.net/qyr5bjm559gz/4HhELAdd1DF1UfbJZrSzmJ/7294aeb34dfed54749849025bd4b76ef/Palia_Key_Art_Wallpaper_4K.png?);;
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/Palia_Key_Art_Wallpaper_4K.png);
 	position: absolute;
 	height: 100vh;
 	background-repeat: no-repeat;
@@ -47,12 +47,22 @@ body {
 	padding: 10px 0;
 }
 
-#palia-times-container>div {
+#palia-times-container > div {
 	width: 100%;
-	border: 2px solid var(--vs-colors--lightest);
+	border: 2px solid var(--vs-colors--light);
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-image: linear-gradient(to bottom, rgba(var(--common-background), 1) 40%, rgba(var(--common-background), 0.5));
+	background-color: rgb(var(--common-background));
+}
+
+#palia-times-container > div:hover {
+	-webkit-filter: brightness(125%);
+	-webkit-transition: 0.2s -webkit-filter linear;
+	-moz-transition: 0.2s -moz-filter linear;
+	-moz-transition: 0.2s filter linear;
+	-ms-transition: 0.2s -ms-filter linear;
+	-o-transition: 0.2s -o-filter linear;
+	transition: 0.2s filter linear, 0.2s -webkit-filter linear;
 }
 
 #palia-times-container[data-show-all="false"]>div[data-is-checked="false"] {
@@ -71,6 +81,7 @@ body {
 
 #palia-times-container input[type="text"] {
 	padding-left: 3px;
+	/* border-color: var(--vs-colors--light); */
 }
 
 input[type="text"][id^="text"] {
@@ -138,8 +149,14 @@ input[type="text"][id^="text"] {
 	font-size: 120%;
 }
 
-.header-close-button {
+.settings-hits {
+	display: flex;
+	align-items: center;
 	margin-left: auto;
+}
+
+.settings-close-button {
+	margin-left: 20px;
 }
 
 .settings-item {

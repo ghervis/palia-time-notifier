@@ -6,6 +6,7 @@ import * as TabManager from './tab-manager.js';
 import * as Say from './say.js';
 
 (async () => {
+	Settings.initializeDarkMode();
 	Element.createTimers();
 	
 	Settings.initializeShowAll();
@@ -25,6 +26,8 @@ import * as Say from './say.js';
 	window.closeSettingsDialog = Settings.closeSettingsDialog;
 
 	window.onVoiceVolumeChange = Settings.onVoiceVolumeChange;
+
+	window.toggleDarkMode = Settings.toggleDarkMode;
 
 	TabManager.registerVisibilityChangeEvent();
 

@@ -102,11 +102,24 @@ export function initializeVoiceVolume() {
 	const voiceVolumeStringValue = window.localStorage.getItem('voice-volume');
 	const voiceVolumeNumberValue = 'string' !== typeof voiceVolumeStringValue || !/^[0-9]+$/.test(voiceVolumeStringValue) ? 90 : Number.parseInt(voiceVolumeStringValue, 10);
 	window.localStorage.setItem('voice-volume', voiceVolumeNumberValue);
-	document.getElementById("voice-volume").value = voiceVolumeNumberValue
+	document.getElementById("voice-volume").value = voiceVolumeNumberValue;
 }
 
 export function onVoiceVolumeChange() {
 	window.localStorage.setItem('voice-volume', document.getElementById('voice-volume').value);
+}
+
+export function initializeDarkMode() {
+	const darkModeStringValue = window.localStorage.getItem('dark-mode');
+	const darkModeBooleanValue = 'string' !== typeof darkModeStringValue || !/^(true|false)$/.test(darkModeStringValue) ? false : ('true' === darkModeStringValue ? true : false);
+	window.localStorage.setItem('dark-mode', darkModeBooleanValue);
+	document.getElementById("dark-mode").checked = darkModeBooleanValue;
+	document.body.classList.toggle('dark-mode', darkModeBooleanValue);
+}
+
+export function toggleDarkMode() {
+	window.localStorage.setItem('dark-mode', document.getElementById('dark-mode').checked);
+	document.body.classList.toggle('dark-mode', document.getElementById('dark-mode').checked);
 }
 
 const _pickInitialSelectedVoice = () => {
