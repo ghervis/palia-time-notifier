@@ -122,6 +122,20 @@ export function toggleDarkMode() {
 	document.body.classList.toggle('dark-mode', document.getElementById('dark-mode').checked);
 }
 
+export function initializeCheckedTimers() {
+	const existingCheckedEntries = Object.entries({
+		...window.localStorage,
+	}).filter(([k, _]) => /^checked-[0-2][0-9]\:[0-5][0-9]$/.test(k));
+
+	if (existingCheckedEntries.length) {
+		return;
+	}
+
+	window.localStorage.setItem('checked-06:00', true);
+
+	document.querySelector(`div[id="06:00"] input[type="checkbox"]`).checked = true;
+}
+
 const _pickInitialSelectedVoice = () => {
 	const voices = speechSynthesis.getVoices();
 

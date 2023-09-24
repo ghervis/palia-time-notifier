@@ -9,6 +9,7 @@ import * as Say from './say.js';
 	Settings.initializeDarkMode();
 	Element.createTimers();
 	
+	Settings.initializeCheckedTimers();
 	Settings.initializeShowAll();
 	Settings.initializeNotifications();
 	Settings.initializeVoiceVolume();
