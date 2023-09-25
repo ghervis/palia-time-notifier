@@ -16,7 +16,7 @@ export function loadVoices() {
 		window.firefoxVoiceLoadedRetryCount -= 1;
 	}, 100);
 
-	speechSynthesis.onvoiceschanged = _proceedWithProcess;
+	// speechSynthesis.onvoiceschanged = _proceedWithProcess;
 
 	function _proceedWithProcess() {
 		clearInterval(window.firefoxVoiceLoadedEventInterval);
