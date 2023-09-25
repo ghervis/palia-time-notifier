@@ -125,7 +125,10 @@ const _pickInitialSelectedVoice = () => {
 	if (!Array.isArray(voices) || !voices.length) {
 		console.error('Unable to initialize. voice list are empty.');
 
-		window.alert('No voice is available.');
+		if (confirm('No voices available. Do you want to reload the page?')) {
+			window.location.reload();
+		}
+		
 		return;
 	}
 
