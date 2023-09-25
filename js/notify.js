@@ -9,16 +9,20 @@ export function doNotify(timeId) {
 
   if (window.lastNotificationId === thisNotificationId) {
     return;
-  }
+	}
 
-  const thatTimeElement = document.getElementById(timeId);
+	const thatTimeElement = document.getElementById(timeId);
+	
+	if (!thatTimeElement) {
+		return;
+	}
 
   const thatCheckbox = thatTimeElement.querySelector('input[type="checkbox"]');
 
   if (!thatCheckbox.checked) {
     return;
-  }
-
+	}
+	
 	const thatInput = thatTimeElement.querySelector('input[type="text"]');
 	
 	let textValue = thatInput.value;

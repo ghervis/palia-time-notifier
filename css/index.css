@@ -1,9 +1,14 @@
 :root {
 	font-size: 18px;
+
+	--border-color: #FDE4C4;
+	--border-color-highlight: #EECDAD;
+	--text-color: var(--earthy-500);
+	--background-color: var(--sun-kissed-paper);
 }
 
 body {
-	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/Palia_Key_Art_Wallpaper_4K.png);
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/EinarDock_Desktop_Wallpaper.png);
 	position: absolute;
 	height: 100vh;
 	background-repeat: no-repeat;
@@ -36,6 +41,19 @@ body {
 	margin-right: 10px;
 }
 
+.header-actions-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	color: var(--text-color);
+	padding-top: 10px;
+}
+
+.header-actions-container > * {
+	align-self: flex-end;
+	width: 120px;
+}
+
 #palia-times-container {
 	display: grid;
 	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -49,10 +67,14 @@ body {
 
 #palia-times-container > div {
 	width: 100%;
-	border: 2px solid var(--vs-colors--light);
+	border: 2px solid var(--border-color);
 	border-radius: 5px;
 	padding: 5px 10px;
-	background-color: rgb(var(--common-background));
+	background-color: var(--background-color);
+}
+
+#palia-times-container > div span {
+	color: var(--text-color);
 }
 
 #palia-times-container > div:hover {
@@ -63,6 +85,7 @@ body {
 	-ms-transition: 0.2s -ms-filter linear;
 	-o-transition: 0.2s -o-filter linear;
 	transition: 0.2s filter linear, 0.2s -webkit-filter linear;
+	border-color: var(--border-color-highlight);
 }
 
 #palia-times-container[data-show-all="false"]>div[data-is-checked="false"] {
@@ -79,23 +102,81 @@ body {
 	user-select: none;
 }
 
-#palia-times-container input[type="text"] {
-	padding-left: 3px;
-	/* border-color: var(--vs-colors--light); */
-}
-
 input[type="text"][id^="text"] {
 	width: 100%;
 	font-family: 'Merriweather', serif;
 	font-size: 80%;
 }
 
+
+#add-time-dialog {
+	left: 0;
+	right: 0;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 10%;
+	border-radius: 8px;
+	background-color: var(--background-color);
+	background-size: cover;
+	background-repeat: no-repeat;
+	border: 2px solid var(--border-color);
+	border-style: solid;
+	color: var(--text-color);
+	min-width: 70%;
+	padding: 20px 20px;
+}
+
+.add-time-header {
+	display: flex;
+	margin-bottom: 10px;
+	font-size: 110%;
+}
+
+.add-time-header > span {
+	flex: 1;
+}
+
+.add-time-items > div:nth-child(n+2) {
+	margin-top: 15px;
+}
+
+.add-time-dropdown {
+	appearance: none;
+	border: none;
+	font-family: inherit;
+	outline: none;
+	border: 2px solid var(--border-color);
+	font-size: 120%;
+	border-radius: 2px;
+	padding: 0 5px;
+	color: #000;
+}
+
+.add-time-hour {
+	text-align: right;
+}
+
 .time-header {
 	display: flex;
 }
 
-#delete {
+input[type="text"] {
+	width: 100%;
+	border-color: var(--border-color);
+	border-style: solid;
+	padding: 2px;
+	font-family: inherit;
+}
+
+.add-time-actions {
+	margin-top: 10px;
+	display: flex;
+}
+
+.delete-time {
 	margin-left: auto;
+	border: 0;
+	cursor: pointer;
 }
 
 #voices-container {
@@ -119,9 +200,9 @@ input[type="text"][id^="text"] {
 }
 
 #settings-button {
-	font-size: 100%;
 	margin-left: 1%;
 	cursor: pointer;
+	color: var(--text-color);
 }
 
 #settings-dialog {
@@ -133,13 +214,13 @@ input[type="text"][id^="text"] {
 	border-radius: 8px;
 	/* border: 4px solid rgb(var(--color-a76f47)); */
 	/* border-bottom: 0px; */
-	background-color: var(--sun-kissed-paper);
+	background-color: var(--background-color);
 	background-size: cover;
 	/* background-attachment: fixed; */
 	background-repeat: no-repeat;
-	border: 5px solid var(--vs-colors--lightest);
+	border: 2px solid var(--border-color);
 	border-style: solid;
-	color: var(--earthy-500);
+	color: var(--text-color);
 	min-width: 300px;
 	aspect-ratio: 250/304;
 	padding: 20px 20px;
@@ -163,6 +244,10 @@ input[type="text"][id^="text"] {
 	margin-left: auto;
 }
 
+.settings-hits > * {
+	width: 70%;
+}
+
 .settings-close-button {
 	margin-left: 20px;
 }
@@ -175,13 +260,28 @@ input[type="text"][id^="text"] {
 	margin-left: 10px;
 }
 
+button {
+	background-color: var(--background-color);
+	border-color: #FDE4C4;
+	border-style: solid;
+	border-radius: 4px;
+	color: var(--text-color);
+	font-family: inherit;
+	padding: 2px 5px;
+	font-size: 90%;
+}
+
+button:hover, button:focus {
+	border-color: var(--border-color-highlight);
+}
+
 @media (max-width: 820px) {
 	:root {
 		font-size: 16px;
 	}
 
 	#palia-times-container {
-		height: calc(100vh - 180px);
+		height: calc(100vh - 260px);
 		grid-auto-flow: row;
 	}
 
@@ -191,5 +291,19 @@ input[type="text"][id^="text"] {
 
 	.ingame-time-label {
 		display: none;
+	}
+
+	#add-time-dialog {
+		min-width: 80%;
+	}
+}
+
+@media (max-width: 540px) {
+	body {
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/EinarDock_Mobile_Wallpaper.png);
+	}
+
+	.add-time-actions > button {
+		margin-left: auto;
 	}
 }

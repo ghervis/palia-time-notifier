@@ -133,7 +133,15 @@ export function initializeCheckedTimers() {
 
 	window.localStorage.setItem('checked-06:00', true);
 
-	document.querySelector(`div[id="06:00"] input[type="checkbox"]`).checked = true;
+	// document.querySelector(`div[id="06:00"] input[type="checkbox"]`).checked = true;
+}
+
+export function showAddTimeDialog() {
+	document.getElementById('add-time-dialog').showModal();
+}
+
+export function closeAddTimeDialog() {
+	document.getElementById('add-time-dialog').close();
 }
 
 const _pickInitialSelectedVoice = () => {

@@ -26,7 +26,8 @@ export function getTimeId(ingameTimeDecimal) {
 		(Math.floor(ingameTimeDecimal * 2) / 2).toFixed(1)
 		);
 		
-		const flooredMinute = 0.5 === flooredHour % 1 ? 30 : 0;
+	// const flooredMinute = 0.5 === flooredHour % 1 ? 30 : 0;
+	const flooredMinute = Math.floor(60 * (ingameTimeDecimal % 1));
 		
 		return `${Math.floor(flooredHour)
 		.toString()
@@ -40,4 +41,8 @@ export function getIngameTimeDisplay() {
 	const ingameMinute = Math.floor((inGameTimeDecimal % 1) * 60);
 
 	return `${ingameHour}:${ingameMinute.toString().padStart(2, '0')} ${getMeridiemText(floorHour)}`;
+}
+
+export function getTimeIdSortingValue(timeId) {
+	return Number.parseInt(timeId.replace(/\:/, ''), 10);
 }

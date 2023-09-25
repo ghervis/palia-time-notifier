@@ -1,4 +1,10 @@
 body.dark-mode {
+	--background-color: #3E2B24;
+	
+	--border-color: #FDE4C4;
+	--border-color-highlight: #EECDAD;
+	--text-color: var(--sun-kissed-paper);
+	
 	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.9)), url(../images/Kitchen_Desktop_Wallpaper__1_.png);
 }
 
@@ -6,23 +12,16 @@ body.dark-mode .header {
 	text-shadow: 0 0 15px rgba(255,255,255,.4);
 }
 
-body.dark-mode #palia-times-container > div {
-	border: 2px solid var(--earthy-500);
-	/* background-color: var(--earthy-500); */
-	background-color: #3E2B24;
-	color: var(--sun-kissed-paper);
-}
-
 body.dark-mode #palia-times-container > div:hover span {
-	text-shadow: 0 0 15px rgba(255,255,255,.5);
-}
-
-body.dark-mode #settings-dialog {
-	color: var(--sun-kissed-paper);
-	background-color: #3E2B24;
-	border: 5px solid var(--earthy-500);
+	text-shadow: 0 0 15px rgba(255,255,255,.3);
 }
 
 body.dark-mode #settings-dialog .settings-item span:hover {
-	text-shadow: 0 0 15px rgba(255,255,255,.8);
+	text-shadow: 0 0 15px rgba(255,255,255,.3);
+}
+
+@media (max-width: 540px) {
+	body.dark-mode {
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/Kitchen_Mobile_Wallpaper.png);
+	}
 }
