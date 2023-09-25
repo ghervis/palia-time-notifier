@@ -10,8 +10,6 @@ export function createTimers() {
 		const [_left, aTimeId] = aKey.match(/^checked-(.+)$/);
 		const [_right, bTimeId] = bKey.match(/^checked-(.+)$/);
 
-		console.log("compare", Util.getTimeIdSortingValue(aTimeId),"-", Util.getTimeIdSortingValue(bTimeId))
-
 		return Util.getTimeIdSortingValue(aTimeId) - Util.getTimeIdSortingValue(bTimeId);
 	});
 
@@ -110,6 +108,15 @@ export function getTimeElementIndex(timeId) {
 	const sortedKeys = timeIdsOnly.sort((a, b) => Util.getTimeIdSortingValue(a) - Util.getTimeIdSortingValue(b));
 	
 	return sortedKeys.findIndex((eachTimeId) => timeId === eachTimeId);
+}
+
+export function updateAddTimePlaceholder() {
+	const addTimeHourValue = document.getElementById("add-time-hour").value;
+	const addTimeMinuteValue = document.getElementById("add-time-minute").value;
+	const addTimeMeridiemValue =
+		document.getElementById("add-time-meridiem").value;
+	
+	document.getElementById("add-time-message").placeholder = `It is now ${addTimeHourValue}:${addTimeMinuteValue} ${addTimeMeridiemValue} in Palia.`;
 }
 
 function _createEachTimer(i) {

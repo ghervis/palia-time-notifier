@@ -50,21 +50,21 @@
 		</div>
 		<div class="add-time-items">
 			<div class="add-time-time-container">
-				<select id="add-time-hour" class="add-time-hour add-time-dropdown" >
+				<select id="add-time-hour" class="add-time-hour add-time-dropdown" onchange="updateAddTimePlaceholder()">
 					<option>12</option>
-					<option>01</option>
-					<option>02</option>
-					<option>03</option>
-					<option>04</option>
-					<option>05</option>
-					<option selected>06</option>
-					<option>07</option>
-					<option>08</option>
-					<option>09</option>
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+					<option selected>6</option>
+					<option>7</option>
+					<option>8</option>
+					<option>9</option>
 					<option>10</option>
 					<option>11</option>
 				</select>
-				<select id="add-time-minute" class="add-time-minute add-time-dropdown">
+				<select id="add-time-minute" class="add-time-minute add-time-dropdown" onchange="updateAddTimePlaceholder()">
 					<option selected>00</option>
 					<option>01</option>
 					<option>02</option>
@@ -126,7 +126,7 @@
 					<option>58</option>
 					<option>59</option>
 				</select>
-				<select id="add-time-meridiem" class=" add-time-dropdown">
+				<select id="add-time-meridiem" class=" add-time-dropdown" onchange="updateAddTimePlaceholder()">
 					<option selected>AM</option>
 					<option>PM</option>
 				</select>
@@ -162,9 +162,6 @@
 			</div>
 			<div class="settings-close-button cursor-pointer no-highlight"
 				onclick="closeSettingsDialog()">&#10006;</div>
-		</div>
-		<div class="settings-item">
-			<label title="Show all options/every 30 minutes time."><input type="checkbox" id="checkbox-show-all" onchange="toggleShowAll()" checked/><span>Show All Options</span></label>
 		</div>
 		<div class="settings-item">
 			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>

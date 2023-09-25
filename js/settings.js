@@ -32,23 +32,6 @@ export function getTextValue(textBoxId) {
 	return textValue;
 };
 
-export function onToggleShowAll() {
-	const showAllBooleanValue = document.getElementById("checkbox-show-all").checked;
-
-	window.localStorage.setItem('show-all', showAllBooleanValue);
-
-	document.getElementById("palia-times-container").setAttribute('data-show-all', showAllBooleanValue);
-}
-
-export function initializeShowAll() {
-	const showAllSavedStringValue = window.localStorage.getItem('show-all');
-	const showAllBooleanValue = 'string' === typeof showAllSavedStringValue ? ("true" === showAllSavedStringValue) : true;
-	
-	document.getElementById("checkbox-show-all").checked = showAllBooleanValue;
-	window.localStorage.setItem('show-all', showAllBooleanValue);
-	document.getElementById("palia-times-container").setAttribute('data-show-all', showAllBooleanValue);
-}
-
 export function initializeNotifications() {
 	const notificationEnabledStringValue = window.localStorage.getItem('enable-notifications');
 	const notificationsEnabledBooleanValue = 'string' === typeof notificationEnabledStringValue ? ("true" === notificationEnabledStringValue) : false;
@@ -134,14 +117,6 @@ export function initializeCheckedTimers() {
 	window.localStorage.setItem('checked-06:00', true);
 
 	// document.querySelector(`div[id="06:00"] input[type="checkbox"]`).checked = true;
-}
-
-export function showAddTimeDialog() {
-	document.getElementById('add-time-dialog').showModal();
-}
-
-export function closeAddTimeDialog() {
-	document.getElementById('add-time-dialog').close();
 }
 
 const _pickInitialSelectedVoice = () => {
