@@ -90,6 +90,14 @@ input[type="text"][id^="text"] {
 	font-size: 80%;
 }
 
+.time-header {
+	display: flex;
+}
+
+#delete {
+	margin-left: auto;
+}
+
 #voices-container {
 	grid-column: 2;
 	display: flex;

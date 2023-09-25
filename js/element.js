@@ -54,7 +54,7 @@ function _createEachTimer(i) {
 
 	const twelveAndThirtyAndMeridiemText = `${twelveHour}:${thirtyString} ${Util.getMeridiemText(thatHour)}`;
 
-  timeContainer.innerHTML = `<div>
+  timeContainer.innerHTML = `<div class="time-header">
 					<label title="Check this if you want to get notifications every ${twelveAndThirtyAndMeridiemText}">
 					<input type="checkbox"
 					id="${checkBoxId}"
@@ -62,6 +62,7 @@ function _createEachTimer(i) {
 					/>
 					<span>${twelveAndThirtyAndMeridiemText}</span>
 					</label>
+					<span id="delete" onclick="delete('${checkBoxId}')">&#10006;</span>
 					</div>
 					<div class="custom-message">
 						<input type="text" id="${textBoxId}"

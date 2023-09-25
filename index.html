@@ -38,6 +38,30 @@
 		<div id="palia-times-container" data-show-all="false">
 		</div>
 	</div>
+
+	<dialog id="add-time-dialog">
+		<div class="add-time-header">
+			<span>Add Time</span>
+		</div>
+		<div class="add-time-items">
+			<input type="number" min="1" max="12" />
+			<select selected="00">
+				<option>00</option>
+				<option>01</option>
+				<option>02</option>
+				<option>03</option>
+				<option>04</option>
+				<option>05</option>
+				<option>06</option>
+				<option>07</option>
+			</select>
+		</div>
+
+		<datalist id="minute-options">
+			<option value="00">
+			<option value="01">
+		</datalist>
+	</dialog>
 	
 	<dialog id="settings-dialog">
 		<div class="settings-header">
