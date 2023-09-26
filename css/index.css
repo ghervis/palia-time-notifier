@@ -318,7 +318,7 @@ button {
 	}
 
 	#palia-times-container {
-		height: calc(100vh - 160px);
+		height: calc(100vh - 180px);
 		grid-auto-flow: row;
 	}
 
@@ -340,13 +340,18 @@ button {
 		background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/EinarDock_Mobile_Wallpaper.png);
 	}
 
+	#palia-times-container {
+		height: calc(100vh - 200px);
+		grid-auto-flow: row;
+	}
+
 	.add-time-actions > button {
 		margin-left: auto;
 	}
 
 	#add-time-button {
 		position: absolute;
-		bottom: 10%;
+		bottom: 20%;
 		border-radius: 50%;
 		aspect-ratio: 1/1;
 		/* width: 40px; */
