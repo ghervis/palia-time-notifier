@@ -12,11 +12,12 @@
 body {
 	background-image: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url(../images/EinarDock_Desktop_Wallpaper.png);
 	position: absolute;
-	height: 100vh;
+	height: 100%;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 h1 {
@@ -369,8 +370,8 @@ button {
 
 	#add-time-button {
 		position: absolute;
-		bottom: 2rem;
-		right: 1.5rem;
+		bottom: 1.2rem;
+		right: 1rem;
 		border-radius: 50%;
 		aspect-ratio: 1/1;
 		/* width: 40px; */
