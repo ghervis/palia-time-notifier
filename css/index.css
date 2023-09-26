@@ -202,6 +202,10 @@ input[type="checkbox"][id^="checked"]:checked ~ span.time-enabled {
 	text-align: right;
 }
 
+.add-time-message-text-container {
+	margin-top: 7px;
+}
+
 .time-header {
 	display: flex;
 	align-items: center;

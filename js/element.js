@@ -1,35 +1,42 @@
 import * as Settings from "./settings.js";
 import * as Util from "./util.js";
 
+document.body.addEventListener("wheel", _onWheelEvent);
+
 export function createTimers() {
   const existingCheckedEntries = Object.entries({
     ...window.localStorage,
-	}).filter(([k, _]) => /^checked-[0-2][0-9]\:[0-5][0-9]$/.test(k));
+  }).filter(([k, _]) => /^checked-[0-2][0-9]\:[0-5][0-9]$/.test(k));
 
-	const sortedCheckedEntries = existingCheckedEntries.sort(([aKey, av], [bKey, bv]) => {
-		const [_left, aTimeId] = aKey.match(/^checked-(.+)$/);
-		const [_right, bTimeId] = bKey.match(/^checked-(.+)$/);
+  const sortedCheckedEntries = existingCheckedEntries.sort(
+    ([aKey, av], [bKey, bv]) => {
+      const [_left, aTimeId] = aKey.match(/^checked-(.+)$/);
+      const [_right, bTimeId] = bKey.match(/^checked-(.+)$/);
 
-		return Util.getTimeIdSortingValue(aTimeId) - Util.getTimeIdSortingValue(bTimeId);
-	});
+      return (
+        Util.getTimeIdSortingValue(aTimeId) -
+        Util.getTimeIdSortingValue(bTimeId)
+      );
+    }
+  );
 
   sortedCheckedEntries.forEach(([checkedKey, checkedValue]) => {
-		let [_checkedKey, timeId] = checkedKey.match(/^checked-(.+)$/);
-		addTimeElement(timeId, checkedValue);
+    let [_checkedKey, timeId] = checkedKey.match(/^checked-(.+)$/);
+    addTimeElement(timeId, checkedValue);
   });
 }
 
 export function addTimeElement(timeId, isChecked) {
-	const timeElement = createTimeElement(timeId, isChecked);
+  const timeElement = createTimeElement(timeId, isChecked);
   const timesContainer = document.getElementById("palia-times-container");
-	timesContainer.appendChild(timeElement);
-	resizeTextArea(timeId);
+  timesContainer.appendChild(timeElement);
+  resizeTextArea(timeId);
 }
 
 export function resizeTextArea(timeId) {
-	const textAreaElement = document.getElementById(`text-${timeId}`);
-	textAreaElement.style.height = 0;
-	textAreaElement.style.height = (textAreaElement.scrollHeight) + "px";
+  const textAreaElement = document.getElementById(`text-${timeId}`);
+  textAreaElement.style.height = 0;
+  textAreaElement.style.height = textAreaElement.scrollHeight + "px";
 }
 
 export function createVoicesDropdown() {
@@ -63,8 +70,8 @@ export function createTimeElement(timeId, wasChecked) {
   const isChecked =
     "undefined" !== typeof wasChecked
       ? wasChecked
-			: Settings.isChecked(checkBoxId);
-	
+      : Settings.isChecked(checkBoxId);
+
   timeContainer.setAttribute("data-is-checked", isChecked);
 
   const textBoxId = `text-${timeId}`;
@@ -110,24 +117,68 @@ export function createTimeElement(timeId, wasChecked) {
 export function getTimeElementIndex(timeId) {
   const existingCheckedEntries = Object.keys({
     ...window.localStorage,
-	}).filter((k) => /^checked-[0-2][0-9]\:[0-5][0-9]$/.test(k));
+  }).filter((k) => /^checked-[0-2][0-9]\:[0-5][0-9]$/.test(k));
 
-	let timeIdsOnly = existingCheckedEntries.map((checkedTimeId) => {const [_, timeId] = checkedTimeId.match(/^checked-(.+)$/); return timeId; })
-	
-	timeIdsOnly.push(timeId);
+  let timeIdsOnly = existingCheckedEntries.map((checkedTimeId) => {
+    const [_, timeId] = checkedTimeId.match(/^checked-(.+)$/);
+    return timeId;
+  });
 
-	const sortedKeys = timeIdsOnly.sort((a, b) => Util.getTimeIdSortingValue(a) - Util.getTimeIdSortingValue(b));
-	
-	return sortedKeys.findIndex((eachTimeId) => timeId === eachTimeId);
+  timeIdsOnly.push(timeId);
+
+  const sortedKeys = timeIdsOnly.sort(
+    (a, b) => Util.getTimeIdSortingValue(a) - Util.getTimeIdSortingValue(b)
+  );
+
+  return sortedKeys.findIndex((eachTimeId) => timeId === eachTimeId);
 }
 
 export function updateAddTimePlaceholder() {
-	const addTimeHourValue = document.getElementById("add-time-hour").value;
-	const addTimeMinuteValue = document.getElementById("add-time-minute").value;
-	const addTimeMeridiemValue =
-		document.getElementById("add-time-meridiem").value;
-	
-	document.getElementById("add-time-message").placeholder = `It is now ${addTimeHourValue}:${addTimeMinuteValue} ${addTimeMeridiemValue} in Palia.`;
+  const addTimeHourValue = document.getElementById("add-time-hour").value;
+  const addTimeMinuteValue = document.getElementById("add-time-minute").value;
+  const addTimeMeridiemValue =
+    document.getElementById("add-time-meridiem").value;
+
+  document.getElementById(
+    "add-time-message"
+  ).placeholder = `It is now ${addTimeHourValue}:${addTimeMinuteValue} ${addTimeMeridiemValue} in Palia.`;
+}
+
+export function onTextAreaInput(element) {
+  elem.style.height = 0;
+  elem.style.height = `${elem.scrollHeight}px`;
+}
+
+function _onWheelEvent(event) {
+	_processDropdownScrollCallback(event);
+}
+
+export function addDropdownScrollCallback(elementId) {
+  const addTimeMinuteElement = document.getElementById(elementId);
+
+  addTimeMinuteElement.onmouseover = addTimeMinuteElement.onmouseout = (event) => {
+    window.dropdownScrollCallbackHoveredElement =
+      "mouseover" === event.type ? event.target : null;
+  };
+}
+
+const _processDropdownScrollCallback = (event) => {
+	const elementToScroll = window.dropdownScrollCallbackHoveredElement
+	if (!elementToScroll) {
+		return;
+	}
+
+	const totalOptions = elementToScroll.length;
+	const currentSelectedIndex = window.dropdownScrollCallbackHoveredElement.selectedIndex;
+	const addOrSubtractDropdownSelectedIndex = _isScrollingUp(event) ? -1 : 1;
+
+	const newIndex = elementToScroll.selectedIndex + addOrSubtractDropdownSelectedIndex;
+
+	elementToScroll.selectedIndex = newIndex > (totalOptions - 1) ? 0 : (newIndex < 0 ? totalOptions-1 : newIndex);
+}
+
+const _isScrollingUp = (event) => {
+	return event.wheelDelta ? event.wheelDelta > 0 : event.deltaY < 0;
 }
 
 function _createEachTimer(i) {

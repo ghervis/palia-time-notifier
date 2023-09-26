@@ -36,11 +36,12 @@ import * as Action from "./action.js";
 	window.addTime = Action.addTime;
 	window.deleteTime = Action.deleteTime;
 	window.closeAddTimeDialog = Action.closeAddTimeDialog;
+
+	Element.addDropdownScrollCallback('add-time-hour');
+	Element.addDropdownScrollCallback('add-time-minute');
+	Element.addDropdownScrollCallback('add-time-meridiem');
 	
-	window.onTextAreaInput = (elem) => {
-  	elem.style.height = 0;
-  	elem.style.height = (elem.scrollHeight) + "px";
-	}
+	window.onTextAreaInput = Element.onTextAreaInput;
 
   TabManager.registerVisibilityChangeEvent();
 
