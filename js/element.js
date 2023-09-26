@@ -23,6 +23,13 @@ export function addTimeElement(timeId, isChecked) {
 	const timeElement = createTimeElement(timeId, isChecked);
   const timesContainer = document.getElementById("palia-times-container");
 	timesContainer.appendChild(timeElement);
+	resizeTextArea(timeId);
+}
+
+export function resizeTextArea(timeId) {
+	const textAreaElement = document.getElementById(`text-${timeId}`);
+	textAreaElement.style.height = 0;
+	textAreaElement.style.height = (textAreaElement.scrollHeight) + "px";
 }
 
 export function createVoicesDropdown() {
@@ -84,12 +91,12 @@ export function createTimeElement(timeId, wasChecked) {
 					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')">&#10006;</button>
 					</div>
 					<div class="custom-message">
-						<input type="text" id="${textBoxId}"
+						<textarea id="${textBoxId}"
 						onkeyup="onTextChange('${textBoxId}')"
-						value="${Settings.getTextValue(textBoxId)}"
+						oninput="onTextAreaInput(this)"
 							placeholder="It is now ${twelveAndThirtyAndMeridiemText} in Palia."
 							title="Text here would be spoken every ${twelveAndThirtyAndMeridiemText}"
-							/>
+							>${Settings.getTextValue(textBoxId)}</textarea>
 					</div>
 					`;
 

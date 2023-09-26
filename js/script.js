@@ -35,7 +35,12 @@ import * as Action from "./action.js";
   window.showAddTimeDialog = Action.showAddTimeDialog;
 	window.addTime = Action.addTime;
 	window.deleteTime = Action.deleteTime;
-  window.closeAddTimeDialog = Action.closeAddTimeDialog;
+	window.closeAddTimeDialog = Action.closeAddTimeDialog;
+	
+	window.onTextAreaInput = (elem) => {
+  	elem.style.height = 0;
+  	elem.style.height = (elem.scrollHeight) + "px";
+	}
 
   TabManager.registerVisibilityChangeEvent();
 

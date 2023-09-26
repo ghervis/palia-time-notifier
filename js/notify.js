@@ -23,7 +23,7 @@ export function doNotify(timeId) {
     return;
 	}
 	
-	const thatInput = thatTimeElement.querySelector('input[type="text"]');
+	const thatInput = thatTimeElement.querySelector('textarea');
 	
 	let textValue = thatInput.value;
 

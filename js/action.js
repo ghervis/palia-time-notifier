@@ -63,7 +63,9 @@ export function addTime() {
   timesContainer.insertBefore(
     timeElement,
     timesContainer.childNodes[Element.getTimeElementIndex(timeId) + 1]
-  );
+	);
+	
+	Element.resizeTextArea(timeId);
 
   document.getElementById("add-time-dialog").close();
 }

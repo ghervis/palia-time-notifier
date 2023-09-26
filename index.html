@@ -31,8 +31,8 @@
 				</div>
 				
 				<div class="header-actions-container">
-					<button id="settings-button" onclick="toggleSettings()">Settings&nbsp;&#128736;</button>
-					<button onclick="showAddTimeDialog()">Add Time &plus;</button>
+					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()">Add Time &plus;</button>
+					<button id="settings-button" class="secondary-button" onclick="toggleSettings()">Settings&nbsp;&#128736;</button>
 				</div>
 			</div>
 			
@@ -138,12 +138,12 @@
 					</span>
 				</div>
 				<div>
-					<input type="text" id="add-time-message" placeholder="Hope you are having a good time."/>
+					<textarea id="add-time-message" placeholder="Hope you are having a good time." oninput="onTextAreaInput(this)"></textarea>
 				</div>
 			</div>
 		</div>
 		<div class="add-time-actions">
-			<button onclick="addTime()">Add</button>
+			<button class="primary-button" onclick="addTime()">Add</button>
 		</div>
 
 		<datalist id="minute-options">
@@ -161,7 +161,7 @@
 				<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fghervis.github.io%2Fpalia-time-notifier&label=visits&countColor=%2379c83d&style=flat-square&labelStyle=lower"/>
 			</div>
 			<div class="settings-close-button cursor-pointer no-highlight"
-				onclick="closeSettingsDialog()">&#10006;</div>
+				onclick="closeSettingsDialog()"><span>&#10006;</span></div>
 		</div>
 		<div class="settings-item">
 			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>
