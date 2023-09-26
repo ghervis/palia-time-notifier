@@ -369,7 +369,8 @@ button {
 
 	#add-time-button {
 		position: absolute;
-		bottom: 13%;
+		bottom: 2rem;
+		right: 1.5rem;
 		border-radius: 50%;
 		aspect-ratio: 1/1;
 		/* width: 40px; */
