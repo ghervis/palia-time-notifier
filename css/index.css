@@ -142,6 +142,10 @@ input[type="checkbox"][id^="checked"]:checked ~ span.time-enabled {
 	border-color: var(--secondary-btn-hover);
 }
 
+#add-time-button {
+	z-index: 1;
+}
+
 #add-time-dialog {
 	left: 0;
 	right: 0;
