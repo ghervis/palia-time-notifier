@@ -302,13 +302,9 @@ dialog {
 	margin-left: auto;
 }
 
-.settings-hits > * {
-	width: 70%;
-}
-
 .settings-close-button {
-	margin-left: 20px;
-	font-size: 90%;
+	align-self: flex-end;
+	margin-left: 8px;
 }
 
 .settings-item {
