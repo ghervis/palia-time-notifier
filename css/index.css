@@ -19,6 +19,14 @@ body {
 	overflow: hidden;
 }
 
+h1 {
+	font-size: 200%;
+}
+
+h2 {
+	font-size: 150%;
+}
+
 .main {
 	padding: 20px 20px;
 	overflow: hidden;
@@ -57,7 +65,6 @@ body {
 
 .header-actions-container > * {
 	align-self: flex-end;
-	width: 120px;
 }
 
 #palia-times-container {
@@ -103,6 +110,14 @@ body {
 	user-select: none;
 }
 
+span.time-enabled{
+	display: none;
+}
+
+input[type="checkbox"][id^="checked"]:checked ~ span.time-enabled {
+	display: inline;
+}
+
 .custom-message {
 	margin-top: 10px;
 }
@@ -126,7 +141,6 @@ body {
 	background: var(--sun-kissed-paper);
 	border-color: var(--secondary-btn-hover);
 }
-
 
 #add-time-dialog {
 	left: 0;
@@ -291,6 +305,7 @@ button {
 	font-family: inherit;
 	padding: 2px 5px;
 	font-size: 90%;
+	cursor: pointer;
 }
 
 @media (max-width: 820px) {
@@ -299,7 +314,7 @@ button {
 	}
 
 	#palia-times-container {
-		height: calc(100vh - 260px);
+		height: calc(100vh - 160px);
 		grid-auto-flow: row;
 	}
 
@@ -323,5 +338,21 @@ button {
 
 	.add-time-actions > button {
 		margin-left: auto;
+	}
+
+	#add-time-button {
+		position: absolute;
+		bottom: 10%;
+		border-radius: 50%;
+		aspect-ratio: 1/1;
+		/* width: 40px; */
+		height: 50px;
+		font-size: 200%;
+		line-height: 100%;
+		width: 50px;
+	}
+
+	.add-time-button-text-desktop {
+		display: none;
 	}
 }

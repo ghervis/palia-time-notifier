@@ -31,8 +31,8 @@
 				</div>
 				
 				<div class="header-actions-container">
-					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()" title="Add a new notification time">Add Time &plus;</button>
-					<button id="settings-button" class="secondary-button" onclick="toggleSettings()" title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video">Settings&nbsp;&#128736;</button>
+					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()" title="Add a new notification time"><span class="add-time-button-text-desktop">Add Time&nbsp;</span>&plus;</button>
+					<button id="settings-button" class="primary-button" onclick="toggleSettings()" title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video">Settings&nbsp;&#128736;</button>
 				</div>
 			</div>
 			
@@ -181,7 +181,7 @@
 		</div>
 		<div class="settings-item" title="This will allow the page to play audio without prior user interaction.">
 			<div>
-				<span style="font-size: 70%;">Always enable audio for this site,<br/>follow instructions in video: </span>
+				<span style="font-size: 70%;">Always enable audio for this site,<br/>follow instructions in this video: </span>
 			</div>
 			<a href="https://youtu.be/cM-POdCpd-o" target="_blank" style="font-size: 70%;">https://youtu.be/cM-POdCpd-o</a>
 		</div>
@@ -191,6 +191,7 @@
 	</dialog>
 
 	<audio id="click-sound" src="./mp3/click-sound.mp3" muted="muted"></audio>
+	<link href='./css/reset.css?v=69' rel='stylesheet' type='text/css'>
 	<link href='./css/common.css?v=6901' rel='stylesheet' type='text/css'>
 	<link href='./css/index.css?v=6903' rel='stylesheet' type='text/css'>
 	<link href='./css/index-dark-mode.css?v=6903' rel='stylesheet' type='text/css'>

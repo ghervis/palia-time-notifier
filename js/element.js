@@ -86,7 +86,7 @@ export function createTimeElement(timeId, wasChecked) {
 					id="${checkBoxId}"
 					onchange="onTimeChecked('${checkBoxId}')"${isChecked ? " checked" : ""}
 					/>
-					<span>${twelveAndThirtyAndMeridiemText}</span>
+					<span>${twelveAndThirtyAndMeridiemText}</span><span class="time-enabled">&nbsp;⏰</span>
 					</label>
 					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')">&#10006;</button>
 					</div>
