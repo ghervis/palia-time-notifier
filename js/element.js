@@ -81,14 +81,18 @@ export function createTimeElement(timeId, wasChecked) {
   )}`;
 
   timeContainer.innerHTML = `<div class="time-header">
-					<label title="Check this if you want to get notifications every ${twelveAndThirtyAndMeridiemText}">
+					<label class="time-header-label" title="Check this if you want to get notifications every ${twelveAndThirtyAndMeridiemText}">
 					<input type="checkbox"
 					id="${checkBoxId}"
 					onchange="onTimeChecked('${checkBoxId}')"${isChecked ? " checked" : ""}
 					/>
-					<span>${twelveAndThirtyAndMeridiemText}</span><span class="time-enabled">&nbsp;⏰</span>
+					<span class="time-header-label-text">${twelveAndThirtyAndMeridiemText}</span><span class="time-enabled material-symbols-outlined">
+					alarm
+					</span>
 					</label>
-					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')">&#10006;</button>
+					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')"><span class="material-symbols-outlined">
+					close
+					</span></button>
 					</div>
 					<div class="custom-message">
 						<textarea id="${textBoxId}"

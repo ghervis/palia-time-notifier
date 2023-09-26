@@ -17,6 +17,8 @@
 	<meta property="og:url" content="https://revulvgina.github.io/palia-time-notifier/" />
 	<meta name="description" content="Get Palia time notifications.">
 	<meta name="theme-color" content="#83d5f6">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
@@ -31,8 +33,12 @@
 				</div>
 				
 				<div class="header-actions-container">
-					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()" title="Add a new notification time"><span class="add-time-button-text-desktop">Add Time&nbsp;</span>&plus;</button>
-					<button id="settings-button" class="primary-button" onclick="toggleSettings()" title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video">Settings&nbsp;&#128736;</button>
+					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()" title="Add a new notification time"><span class="add-time-button-text-desktop">Add Time</span><span class="material-symbols-outlined">
+						add
+						</span></button>
+					<button id="settings-button" class="primary-button" onclick="toggleSettings()" title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video"><span>Settings</span><span class="material-symbols-outlined">
+						settings
+						</span></button>
 				</div>
 			</div>
 			
@@ -46,7 +52,9 @@
 		<div class="add-time-header">
 			<span>Add Time</span>
 			<div class="settings-close-button cursor-pointer no-highlight"
-				onclick="closeAddTimeDialog()">&#10006;</div>
+				onclick="closeAddTimeDialog()"><span class="material-symbols-outlined">
+					close
+					</span></div>
 		</div>
 		<div class="add-time-items">
 			<div class="add-time-time-container">
@@ -143,7 +151,9 @@
 			</div>
 		</div>
 		<div class="add-time-actions">
-			<button class="primary-button" onclick="addTime()">Add</button>
+			<button class="primary-button" onclick="addTime()"><span>Add</span><span class="material-symbols-outlined">
+				add
+				</span></button>
 		</div>
 
 		<datalist id="minute-options">
@@ -156,12 +166,17 @@
 	
 	<dialog id="settings-dialog">
 		<div class="settings-header">
-			<span>Settings&nbsp;&#128736;</span>
+			<span>Settings&nbsp;</span>
+			<span class="material-symbols-outlined">
+				settings
+				</span>
 			<div class="settings-hits">
 				<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fghervis.github.io%2Fpalia-time-notifier&label=visits&countColor=%2379c83d&style=flat-square&labelStyle=lower"/>
 			</div>
 			<div class="settings-close-button cursor-pointer no-highlight"
-				onclick="closeSettingsDialog()"><span>&#10006;</span></div>
+				onclick="closeSettingsDialog()"><span class="material-symbols-outlined">
+					close
+					</span></div>
 		</div>
 		<div class="settings-item">
 			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>
@@ -181,7 +196,7 @@
 		</div>
 		<div class="settings-item" title="This will allow the page to play audio without prior user interaction.">
 			<div>
-				<span style="font-size: 70%;">Always enable audio for this site,<br/>follow instructions in this video: </span>
+				<span style="font-size: 70%;">Always enable sound for this site,<br/>follow instructions in this video: </span>
 			</div>
 			<a href="https://youtu.be/cM-POdCpd-o" target="_blank" style="font-size: 70%;">https://youtu.be/cM-POdCpd-o</a>
 		</div>
