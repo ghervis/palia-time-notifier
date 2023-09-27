@@ -69,8 +69,8 @@ export function createTimeElement(timeId, wasChecked) {
 
   const isChecked =
     "undefined" !== typeof wasChecked
-      ? wasChecked
-      : Settings.isChecked(checkBoxId);
+      ? Util.getBooleanValue(wasChecked)
+			: Settings.isChecked(checkBoxId);
 
   timeContainer.setAttribute("data-is-checked", isChecked);
 
@@ -110,7 +110,7 @@ export function createTimeElement(timeId, wasChecked) {
 							>${Settings.getTextValue(textBoxId)}</textarea>
 					</div>
 					`;
-
+	
   return timeContainer;
 }
 

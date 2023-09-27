@@ -46,3 +46,15 @@ export function getIngameTimeDisplay() {
 export function getTimeIdSortingValue(timeId) {
 	return Number.parseInt(timeId.replace(/\:/, ''), 10);
 }
+
+export function getBooleanValue(thatObject) {
+	if ('undefined' === typeof thatObject) {
+		return false;
+	}
+
+	if ('string' === typeof thatObject) {
+		return 'true' === thatObject;
+	}
+
+	return !!thatObject;
+}
