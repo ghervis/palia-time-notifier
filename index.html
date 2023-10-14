@@ -7,10 +7,12 @@
 	<meta name="viewport" content="width=device-width" />
 	<link data-n-head="ssr" rel="preconnect" href="https://fonts.googleapis.com">
 	<link data-n-head="ssr" rel="preconnect" href="https://fonts.gstatic.com" crossorigin="true">
-	<link data-n-head="ssr" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&amp;family=Quicksand:wght@600;700&amp;display=swap">
+	<link data-n-head="ssr" rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&amp;family=Quicksand:wght@600;700&amp;display=swap">
 	<link rel="icon" href="./favicon.ico?v=69" type="image/x-icon" />
 
-	<meta property="og:image" content="https://raw.githubusercontent.com/revulvgina/palia-time-notifier/main/Exquisite_Hoe.png">
+	<meta property="og:image"
+		content="https://raw.githubusercontent.com/revulvgina/palia-time-notifier/main/Exquisite_Hoe.png">
 	<meta property="og:title" content="Palia Time Notifier" />
 	<meta property="og:description" content="Get Palia time notifications." />
 	<meta property="og:type" content="website" />
@@ -18,31 +20,37 @@
 	<meta name="description" content="Get Palia time notifications.">
 	<meta name="theme-color" content="#83d5f6">
 
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 
 <body>
 	<div class="main">
 		<div class="header">
 			<div>
-				<h1 class="no-highlight" title="I don't have budget for buying a domain for this website.">Palia Time Notifier</h1>
+				<h1 class="no-highlight" title="I don't have budget for buying a domain for this website.">Palia Time Notifier
+				</h1>
 			</div>
 			<div class="header-status">
 				<div>
-						<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span>
+					<h2 id="ingame-time">00:00</h2><span class="ingame-time-label">&nbsp;In-game Time</span>
 				</div>
-				
+
 				<div class="header-actions-container">
-					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()" title="Add a new notification time"><span class="add-time-button-text-desktop">Add Time</span><span class="material-symbols-outlined">
-						add
+					<button id="add-time-button" class="primary-button" onclick="showAddTimeDialog()"
+						title="Add a new notification time"><span class="add-time-button-text-desktop">Add Time</span><span
+							class="material-symbols-outlined">
+							add
 						</span></button>
-					<button id="settings-button" class="primary-button" onclick="toggleSettings()" title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video"><span>Settings</span><span class="material-symbols-outlined">
-						settings
+					<button id="settings-button" class="primary-button" onclick="toggleSettings()"
+						title="App Notifications&#013;&#010;Voice List&#013;&#010;Voice Volume&#013;&#010;Dark Mode&#013;&#010;Instruction Video"><span>Settings</span><span
+							class="material-symbols-outlined">
+							settings
 						</span></button>
 				</div>
 			</div>
-			
-			
+
+
 		</div>
 		<div id="palia-times-container" data-show-all="false">
 		</div>
@@ -51,10 +59,10 @@
 	<dialog id="add-time-dialog">
 		<div class="add-time-header">
 			<span>Add Time</span>
-			<div class="settings-close-button cursor-pointer no-highlight"
-				onclick="closeAddTimeDialog()"><span class="material-symbols-outlined">
+			<div class="settings-close-button cursor-pointer no-highlight" onclick="closeAddTimeDialog()"><span
+					class="material-symbols-outlined">
 					close
-					</span></div>
+				</span></div>
 		</div>
 		<div class="add-time-items">
 			<div class="add-time-time-container">
@@ -146,34 +154,37 @@
 					</span>
 				</div>
 				<div class="add-time-message-text-container">
-					<textarea id="add-time-message" placeholder="Hope you are having a good time." oninput="onTextAreaInput(this)"></textarea>
+					<textarea id="add-time-message" placeholder="Hope you are having a good time."
+						oninput="onTextAreaInput(this)"></textarea>
 				</div>
 			</div>
 		</div>
 		<div class="add-time-actions">
 			<button class="primary-button" onclick="addTime()"><span>Add</span><span class="material-symbols-outlined">
-				add
+					add
 				</span></button>
 		</div>
 
 	</dialog>
-	
+
 	<dialog id="settings-dialog">
 		<div class="settings-header">
 			<span>Settings&nbsp;</span>
 			<span class="material-symbols-outlined">
 				settings
-				</span>
+			</span>
 			<div class="settings-hits">
-				<img src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fghervis.github.io%2Fpalia-time-notifier&label=visits&countColor=%2379c83d&style=flat-square&labelStyle=lower"/>
+				<img
+					src="https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fghervis.github.io%2Fpalia-time-notifier&label=visits&countColor=%2379c83d&style=flat-square&labelStyle=lower" />
 			</div>
-			<div class="settings-close-button cursor-pointer no-highlight"
-				onclick="closeSettingsDialog()"><span class="material-symbols-outlined">
+			<div class="settings-close-button cursor-pointer no-highlight" onclick="closeSettingsDialog()"><span
+					class="material-symbols-outlined">
 					close
-					</span></div>
+				</span></div>
 		</div>
 		<div class="settings-item">
-			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications" onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>
+			<label title="Check to get app notifications."><input type="checkbox" id="enable-notifications"
+					onchange="toggleEnableNotifications()" /><span>App Notifications</span></label>
 		</div>
 		<div class="settings-item" id="voices-container">
 			<div><span>Voice to use</span></div>
@@ -183,19 +194,30 @@
 				<span>Voice Volume&nbsp;</span><span id="voice-volume-intensity">🔊</span>
 			</div>
 			<input type="range" id="voice-volume" name="voice-volume" min="0" max="100" step="10"
-			onchange="onVoiceVolumeChange()" style="width: 100%" />
+				onchange="onVoiceVolumeChange()" style="width: 100%" />
 		</div>
 		<div class="settings-item">
-			<label title="Toggle dark mode."><input type="checkbox" id="dark-mode" onchange="toggleDarkMode()" /><span>Dark Mode</span></label>
+			<label title="Toggle dark mode."><input type="checkbox" id="dark-mode" onchange="toggleDarkMode()" /><span>Dark
+					Mode</span></label>
 		</div>
 		<div class="settings-item" title="This will allow the page to play audio without prior user interaction.">
 			<div>
-				<span style="font-size: 70%;">Always enable sound for this site,<br/>follow instructions in this video: </span>
+				<span style="font-size: 70%;">Always enable sound for this site,<br />follow instructions in this video: </span>
 			</div>
 			<a href="https://youtu.be/cM-POdCpd-o" target="_blank" style="font-size: 70%;">https://youtu.be/cM-POdCpd-o</a>
 		</div>
 		<div class="settings-item">
-			<a href='https://ko-fi.com/V7V6FNLGC' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+			<a href='https://ko-fi.com/V7V6FNLGC' target='_blank'><img height='36' style='border:0px;height:36px;'
+					src='https://storage.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
+		</div>
+		<div class="settings-item">
+			<label class="settings-news-label no-highlight"><input id="news-shown" type="checkbox" style="display: none" />
+				<span class="news-show-text">Show</span>
+				<span class="news-hide-text">Hide</span>
+				<span>Palia News</span>
+				<div id="news-container">Fetching news...</div>
+			</label>
+			
 		</div>
 	</dialog>
 

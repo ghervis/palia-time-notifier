@@ -294,6 +294,7 @@ dialog {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 10px;
+	align-items: center;
 }
 
 .settings-header > span {
@@ -313,10 +314,46 @@ dialog {
 
 .settings-item {
 	margin-top: 15px;
+	cursor: pointer;
 }
 
 .settings-item label > span {
 	margin-left: 10px;
+}
+
+.settings-item > .settings-news-label > span {
+	margin-left: 0;
+	cursor: pointer;
+}
+
+#news-shown:checked ~ .news-show-text {
+	display: none;
+}
+#news-shown:checked ~ .news-hide-text {
+	display: inline;
+}
+#news-shown:checked ~ #news-container {
+	display: block;
+}
+
+#news-shown:not(:checked) ~ #news-container {
+	display: none;
+}
+
+#news-shown:not(:checked) ~ .news-show-text {
+	display: inline;
+}
+
+#news-shown:not(:checked) ~ .news-hide-text {
+	display: none;
+}
+
+#news-container > a {
+	font-size: 69%;
+}
+
+a:visited, a:link {
+	color: inherit;
 }
 
 button {

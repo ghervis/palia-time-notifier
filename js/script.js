@@ -56,5 +56,5 @@ import * as Action from "./action.js";
     };
   });
 
-  Say.loadVoices();
+	Say.loadVoices();
 })();
