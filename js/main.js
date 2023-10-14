@@ -4,7 +4,7 @@ import * as InGameTime from './ingame-time.js';
 import * as Util from './util.js';
 import { populateNews } from './news.js';
 
-export async function run() {
+export function run() {
 	const inGameTimeDecimal = Util.getCurrentIngameTimeDecimal();
 	
 	InGameTime.updateInGameTime();
@@ -13,5 +13,5 @@ export async function run() {
 	
 	Notify.doNotify(timeId);
 
-	await populateNews();
+	populateNews();
 }

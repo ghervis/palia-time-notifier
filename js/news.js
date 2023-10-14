@@ -14,7 +14,7 @@ export async function populateNews() {
 		return;
 	}
 
-	const htmlText = await response.text()
+	const htmlText = await htmlResponse.text()
 	
 	const parser = new DOMParser()
 	const virtualDoc = parser.parseFromString(htmlText, 'text/html');
