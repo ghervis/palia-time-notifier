@@ -6,9 +6,11 @@ export async function populateNews() {
 
 	window.__newsFetchTimeout = nowDate + 600000;
 
+	const cacheIdentifier = new Date().toISOString().substring(0, 15).replaceAll(/T|\:/ig, '-');
+
 	let htmlResponse;
 	try {
-		htmlResponse = await fetch(`https://ghervis.vercel.app/api/palia-news/${Date.now()}`);
+		htmlResponse = await fetch(`https://ghervis.vercel.app/api/palia-news/${cacheIdentifier}`);
 	} catch (reason) {
 		console.error('Unable to fetch news.', reason);
 		return;
