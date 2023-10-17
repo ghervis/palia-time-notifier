@@ -97,9 +97,11 @@ export function createTimeElement(timeId, wasChecked) {
 					alarm
 					</span>
 					</label>
-					<span class="time-voice-preview no-highlight cursor-pointer material-symbols-outlined" title="Hear a preview for this notification's message" onclick="previewTime('${timeId}')">
+					<button class="time-voice-preview">
+					<span class="material-symbols-outlined" title="Hear a preview for this notification's message" onclick="previewTime('${timeId}')">
 					record_voice_over
 					</span>
+					</button>
 					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')"><span class="material-symbols-outlined">
 					close
 					</span></button>
