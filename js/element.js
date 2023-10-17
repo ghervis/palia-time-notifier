@@ -97,6 +97,9 @@ export function createTimeElement(timeId, wasChecked) {
 					alarm
 					</span>
 					</label>
+					<span class="time-voice-preview no-highlight cursor-pointer material-symbols-outlined" title="Hear a preview for this notification's message" onclick="previewTime('${timeId}')">
+					record_voice_over
+					</span>
 					<button class="delete-time" title="Delete this time" onclick="deleteTime('${timeId}')"><span class="material-symbols-outlined">
 					close
 					</span></button>
@@ -160,6 +163,19 @@ export function addDropdownScrollCallback(elementId) {
     window.dropdownScrollCallbackHoveredElement =
       "mouseover" === event.type ? event.target : null;
   };
+}
+
+export function getInputTextValue(element) {
+	let textValue = element.value;
+
+  if (
+    "string" !== typeof textValue ||
+    0 === textValue.trim().length
+  ) {
+		return element.placeholder;
+	}
+
+	return textValue;
 }
 
 const _processDropdownScrollCallback = (event) => {

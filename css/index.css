@@ -111,12 +111,16 @@ h2 {
 	user-select: none;
 }
 
-span.time-enabled{
-	display: none;
+span.time-enabled {
+	visibility: hidden;
 }
 
 input[type="checkbox"][id^="checked"]:checked ~ span.time-enabled {
-	display: inline;
+	visibility: visible;
+}
+
+span.time-voice-preview {
+	margin-left: 10px;
 }
 
 .custom-message {

@@ -1,6 +1,7 @@
 import * as Say from './say.js';
 import * as Util from './util.js';
 import * as NotificationManager from './notification.js';
+import * as Element from './element.js';
 
 window.lastNotificationId = undefined;
 
@@ -23,18 +24,9 @@ export function doNotify(timeId) {
     return;
 	}
 	
-	const thatInput = thatTimeElement.querySelector('textarea');
+	const textAreaElement = thatTimeElement.querySelector('textarea');
 	
-	let textValue = thatInput.value;
-
-  if (
-    "string" !== typeof textValue ||
-    0 === textValue.trim().length
-  ) {
-		const [_, hour, minute] = timeId.match(/^(\d+):(\d+)$/);
-
-		textValue = thatInput.placeholder;
-	}
+	let textValue = Element.getInputTextValue(textAreaElement);
 
 	window.lastNotificationId = thisNotificationId;
 

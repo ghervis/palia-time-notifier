@@ -36,6 +36,7 @@ import * as Action from "./action.js";
 	window.addTime = Action.addTime;
 	window.deleteTime = Action.deleteTime;
 	window.closeAddTimeDialog = Action.closeAddTimeDialog;
+	window.previewTime = Action.previewTime;
 
 	Element.addDropdownScrollCallback('add-time-hour');
 	Element.addDropdownScrollCallback('add-time-minute');

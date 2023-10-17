@@ -1,4 +1,5 @@
 import * as Element from "./element.js";
+import * as Say from "./say.js";
 
 export function showAddTimeDialog() {
   document.getElementById("add-time-dialog").showModal();
@@ -78,4 +79,11 @@ export function deleteTime(timeId) {
 
 export function closeAddTimeDialog() {
 	document.getElementById('add-time-dialog').close();
+}
+
+export function previewTime(timeId) {
+	const timeContainer = document.getElementById(timeId);
+	const textAreaElement = timeContainer.querySelector('textarea');
+	const textValue = Element.getInputTextValue(textAreaElement);
+	Say.doSpeak(textValue);
 }
